@@ -1,38 +1,246 @@
-.App {
+body {
+  background-image: url(images/bg-image.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  color: #fff;
+  font-family: 'Prompt', sans-serif;
+  margin: 0px;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+}
+
+.wrapper {
+  width: 600px;
+  max-width: 100%;
+  background: #ffffff2e;
+  position: relative;
+  box-shadow: 0px 0px 18px #ffffff14;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.welcome-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-content .title-sec {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.welcome-content .content-wrap {
+  width: 100%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+.welcome-content .title-sec h2 {
+  margin: 0px;
+  padding-bottom: 5px;
+  font-size: 34px;
+  line-height: 1.2;
+}
+
+.welcome-content .title-sec p {
+  font-size: 14px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.welcome-content .title-sec h2 span {
+  color: #ff0039;
+}
+
+.wrapper:before {
+  content: "";
+  position: absolute;
+  inset: 0px;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.listing-wrap .add-list {
+  margin-bottom: 25px;
+}
+
+.listing-wrap .list-input-btn {
+  margin-bottom: 15px;
+}
+
+.listing-wrap .list-input-btn i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  color: #333;
+  border-radius: 6px;
+  margin: 0px auto;
+  margin-bottom: 2px;
+  cursor: pointer;
+}
+
+.listing-wrap .list-input-btn span {
+  font-size: 13px;
+}
+
+.listing-wrap .form-input-row {
+  display: inline-block;
+  position: relative;
+  border: 1px solid #fff;
+  border-radius: 50px;
+  padding: 4px 40px 4px 20px;
+}
+
+.listing-wrap .form-input-row input {
+  padding: 0px;
+  border: none;
+  background: none;
+  color: #fff;
+}
+
+.listing-wrap .form-input-row i {
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  transform: translateY(-50%);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.listing-wrap .form-input-row input:focus {
+  outline: none;
+  border: none;
+}
+
+.listing-wrap .form-input-row input::placeholder {
+  color: #fff
+}
+
+.listing-wrap .listTodo {
+  padding: 0px;
+  margin: 0px;
+}
+
+.listing-wrap .listTodo .toDo {
+  list-style-type: none;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: #ffffff54;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.listing-wrap .listTodo .toDo .input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin-right: 6px;
+  position: relative;
+}
+
+.listing-wrap .listTodo .toDo p {
+  margin: 0px;
+  line-height: 1;
+  text-align: left;
+  padding-right: 5px;
+}
+
+.listing-wrap .listTodo .toDo .input input {
+  position: absolute;
+  opacity: 0;
+  top: -10px;
+  left: 0px;
+}
+
+.listing-wrap .listTodo .toDo .input label {
+  display: inline-block;
+  vertical-align: text-top;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.listing-wrap .listTodo .toDo .input.selected label:after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 14px;
+  background: white;
+  width: 2px;
+  height: 2px;
+  box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+  transform: rotate(45deg);
+}
+
+.listing-wrap .listTodo .toDo .input.selected label {
+  background: #b20082;
+}
+
+.listing-wrap .listTodo .toDo .input label:hover {
+  background: #b20082;
+}
+
+.listing-wrap .listTodo .toDo .dlt-btn {
+  margin-left: auto;
+  line-height: 0;
+  margin-top: 2px;
+}
+
+.listing-wrap .listTodo .toDo .dlt-btn i {
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.listing-wrap .listTodo .toDo .dlt-btn i:hover {
+  color: #b20082;
+}
+
+.listing-wrap .listTodo .dltToDo {
+  background: #dd2c1f99;
+}
+
+.listing-wrap .listTodo .dltToDo p {
+  text-decoration: line-through;
+}
+
+.listing-wrap .listTodo .dltToDo label {
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.listing-wrap .listTodo .dltToDo i:hover {
+  color: #0000007a !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.listing-wrap .listTodo .actToDo {
+  background: #219926c2;
 }
 
-.App-link {
-  color: #61dafb;
+.listing-wrap .listTodo .actToDo i {
+  pointer-events: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.clear-button button {
+  border: none;
+  background: none;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
 }
